@@ -1,4 +1,7 @@
 import pymongo as pm
+from pymongo import DESCENDING
+from bson import ObjectId
+
 mongo_client = pm.MongoClient("mongodb://localhost:27017/")
 
 
@@ -34,11 +37,11 @@ if __name__ == "__main__":
 def get_users():
     db = mongo_client["social-data"]
     user_collection = db["user_data"]
-    return user_collection.find()
+    return list(user_collection.find().sort("name", DESCENDING))
 
 
 def get_data(user_id):
     db = mongo_client["social-data"]
     # user_collection = db["user_data"]
     data_collection = db["data"]
-    return data_collection.find_one(filter={"_id": user_id})
+    return data_collection.find_one(filter={"_id": ObjectId(user_id)})

@@ -2,11 +2,12 @@ from flask import request
 from flask import Flask
 import mongooperations as mo
 import json
+from flask_cors import CORS
+
 
 app = Flask(__name__)
+CORS(app)
 
-
-# app.run()
 
 @app.route('/home', methods=["GET"])
 def home():
@@ -24,6 +25,8 @@ def populate():
 @app.route('/getUsers', methods=["GET"])
 def get_users():
     data = mo.get_users()
+    for user in data:
+        user["_id"] = str(user["_id"])
     return json.dumps({"response": data})
 
 
