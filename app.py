@@ -6,6 +6,8 @@ from flask_cors import CORS
 
 
 app = Flask(__name__)
+app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
+
 CORS(app)
 
 
@@ -16,6 +18,7 @@ def home():
 
 @app.route('/populate', methods=["POST"])
 def populate():
+    
     data = request.json
     print(data)
     mo.insert_data(data)

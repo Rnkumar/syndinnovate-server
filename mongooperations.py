@@ -4,7 +4,7 @@ from bson import ObjectId
 
 mongo_client = pm.MongoClient("mongodb://localhost:27017/")
 
-
+# {"sms":[{}],"tweets":[],"user":{},"facebook":{}}
 def insert_data(data):
     db = mongo_client["social-data"]
     user_collection = db["user_data"]
