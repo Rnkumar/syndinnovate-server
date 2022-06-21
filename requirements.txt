@@ -15,7 +15,7 @@ joblib==0.13.2
 linkedin-scraper==2.4.0
 lxml==4.4.1
 MarkupSafe==1.1.1
-numpy==1.17.1
+numpy==1.22.0
 post==2019.4.13
 public==2019.4.13
 pymongo==3.9.0
