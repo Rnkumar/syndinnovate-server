@@ -11,7 +11,7 @@ html5lib==1.0.1
 idna==2.8
 itsdangerous==1.1.0
 Jinja2==2.10.1
-joblib==0.13.2
+joblib==1.2.0
 linkedin-scraper==2.4.0
 lxml==4.4.1
 MarkupSafe==1.1.1
